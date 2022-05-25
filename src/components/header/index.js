@@ -11,6 +11,8 @@ const Header = () => {
         backgroundColor: (theme) => alpha(theme.palette.common.black, 0.3),
         borderBottom: 1,
         borderColor: (theme) => alpha(theme.palette.common.white, 0.4),
+        position: 'relative',
+        zIndex: 9,
       }}
     >
       <AppBar position='static' color='transparent' elevation={0}>

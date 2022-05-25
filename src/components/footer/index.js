@@ -8,7 +8,6 @@ const Footer = () => {
       sx={{ flexGrow: 1, borderTop: 1, borderColor: (theme) => alpha(theme.palette.common.white, 0.4) }}
       textAlign='center'
       py={2}
-      mt={5}
     >
       <Container>
         Made by{' '}
