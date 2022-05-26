@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// simplebar style
+import 'simplebar/dist/simplebar.min.css';
 // main style
 import './assets/style/style.css';
 import App from './App';
