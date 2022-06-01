@@ -106,7 +106,7 @@ const WatchlistDrawer = ({ active, handleClose }) => {
             <SimpleBarStyle>
               <Box p={2}>
                 {movies.map((m) => (
-                  <WatchlistCard media={m} mediaType='movie' />
+                  <WatchlistCard key={m.id} media={m} mediaType='movie' />
                 ))}
               </Box>
             </SimpleBarStyle>
@@ -117,7 +117,7 @@ const WatchlistDrawer = ({ active, handleClose }) => {
             <SimpleBarStyle>
               <Box p={2}>
                 {tvShows.map((m) => (
-                  <WatchlistCard media={m} mediaType='tv' />
+                  <WatchlistCard key={m.id} media={m} mediaType='tv' />
                 ))}
               </Box>
             </SimpleBarStyle>
