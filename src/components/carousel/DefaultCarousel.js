@@ -22,8 +22,8 @@ const DefaultCarousel = ({ mediaList, mediaType, mediaCategory }) => {
 
   return (
     <Swiper slidesPerView={5} spaceBetween={30} navigation={true} modules={[Navigation]} className='mySwiper'>
-      {mediaList.map((m) => (
-        <SwiperSlide key={m.id}>
+      {mediaList.map((m, idx) => (
+        <SwiperSlide key={`${m.id}-${idx}`}>
           <DefaultCard media={m} mediaType={mediaType} />
         </SwiperSlide>
       ))}

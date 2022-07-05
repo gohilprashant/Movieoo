@@ -3,9 +3,17 @@ import { Avatar, Box, IconButton, Tooltip, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import InfoIcon from '@mui/icons-material/Info';
 import { deepOrange, grey } from '@mui/material/colors';
+import { useDispatch } from 'react-redux';
+import { removeFromWatchlist } from '../../store/slices/watchlistSlice';
 const WatchlistCard = ({ media, mediaType }) => {
   const isMovie = mediaType === 'movie';
   const date = new Date(isMovie ? media.release_date : media.first_air_date);
+  const dispatch = useDispatch();
+
+  const handleRemove = () => {
+    dispatch(removeFromWatchlist({ id: media.id, mediaType }));
+  };
+
   return (
     <Box
       key={media.id}
@@ -69,7 +77,7 @@ const WatchlistCard = ({ media, mediaType }) => {
             </IconButton>
           </Tooltip>
           <Tooltip title='Delete' placement='top' arrow>
-            <IconButton aria-label='delete' size='small'>
+            <IconButton aria-label='delete' size='small' onClick={handleRemove}>
               <DeleteIcon fontSize='inherit' />
             </IconButton>
           </Tooltip>

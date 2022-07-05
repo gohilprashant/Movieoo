@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 // simplebar style
 import 'simplebar/dist/simplebar.min.css';
 // main style
+import 'react-toastify/dist/ReactToastify.css';
 import './assets/style/style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';

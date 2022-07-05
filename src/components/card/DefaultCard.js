@@ -5,6 +5,8 @@ import IconButton from '@mui/material/IconButton';
 import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import InfoIcon from '@mui/icons-material/Info';
 import { grey, yellow } from '@mui/material/colors';
+import { useDispatch } from 'react-redux';
+import { addToWatchList } from '../../store/slices/watchlistSlice';
 const StyleDefaultCard = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
@@ -66,6 +68,12 @@ const StyleDefaultCard = styled('div')(({ theme }) => ({
 const DefaultCard = ({ media, mediaType }) => {
   const isMovie = mediaType === 'movie';
   const date = new Date(isMovie ? media.release_date : media.first_air_date);
+  const dispatch = useDispatch();
+
+  const handleAddToWatchList = () => {
+    dispatch(addToWatchList({ media, mediaType }));
+  };
+
   return (
     <StyleDefaultCard>
       <Chip icon={<StarIcon />} label={media.vote_average ? media.vote_average : '-'} size='small' />
@@ -88,7 +96,7 @@ const DefaultCard = ({ media, mediaType }) => {
             </IconButton>
           </Tooltip>
           <Tooltip title='Add to watchlist' placement='top' arrow>
-            <IconButton size='large'>
+            <IconButton size='large' onClick={handleAddToWatchList}>
               <BookmarkAddIcon />
             </IconButton>
           </Tooltip>
