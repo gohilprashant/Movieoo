@@ -3,7 +3,7 @@ import { alpha, AppBar, Box, Container, Toolbar, Typography } from '@mui/materia
 import MovieFilterIcon from '@mui/icons-material/MovieFilter';
 import Search from './Search';
 import Watchlist from './Watchlist';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <Box
@@ -17,7 +17,7 @@ const Header = () => {
     >
       <AppBar position='static' color='transparent' elevation={0}>
         <Toolbar component={Container}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box component={Link} to='/' sx={{ display: 'flex', alignItems: 'center', color: 'white' }}>
             <MovieFilterIcon sx={{ fontSize: '2rem' }} />
             <Typography variant='h5' component='div' sx={{ ml: '.25rem' }}>
               Movieoo

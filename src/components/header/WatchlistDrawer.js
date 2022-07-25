@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { alpha, Box, Button, Divider, Drawer, IconButton, styled, Tab, Tabs, Typography } from '@mui/material';
+import { Alert, alpha, Box, Button, Divider, Drawer, IconButton, styled, Tab, Tabs, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import WatchlistCard from './WatchlistCard';
 import SimpleBarReact from 'simplebar-react';
@@ -134,7 +134,9 @@ const WatchlistDrawer = ({ active, handleClose }) => {
                   </SimpleBarStyle>
                 ) : (
                   <Box flexGrow={1} p={2}>
-                    <Typography variant='p'>There are no Shows added to watchlist currently...</Typography>
+                    <Alert variant='outlined' severity='info'>
+                      There are no Shows added to watchlist currently...
+                    </Alert>
                   </Box>
                 )}
               </Box>
@@ -144,7 +146,9 @@ const WatchlistDrawer = ({ active, handleClose }) => {
       )}
       {movies.length < 1 && tvShows.length < 1 && (
         <Box flexGrow={1} p={2}>
-          <Typography variant='p'>There are no Movies or Shows added to watchlist currently...</Typography>
+          <Alert variant='outlined' severity='info'>
+            There are no Movies or Shows added to watchlist currently...
+          </Alert>
         </Box>
       )}
     </Drawer>
