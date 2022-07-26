@@ -47,7 +47,7 @@ const Search = () => {
         <Typography variant='h5' fontWeight={400} mb={4}>
           {media.movies.length > 0 || media.tvShows.length > 0 ? 'Search Results for ' : 'No results found for '}
 
-          <Box component={'span'} fontWeight={600}>
+          <Box component={'span'} fontWeight={700}>
             {query}
           </Box>
         </Typography>

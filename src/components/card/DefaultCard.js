@@ -7,6 +7,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { grey, yellow } from '@mui/material/colors';
 import { useDispatch } from 'react-redux';
 import { addToWatchList } from '../../store/slices/watchlistSlice';
+import { Link } from 'react-router-dom';
 const StyleDefaultCard = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
@@ -90,7 +91,13 @@ const DefaultCard = ({ media, mediaType }) => {
           {date.getFullYear() ? date.getFullYear() : 'Not available'}
         </Typography>
         <div className='card-actions'>
-          <Tooltip title='Details' placement='top' arrow>
+          <Tooltip
+            title='Details'
+            placement='top'
+            component={Link}
+            to={`/detail/${isMovie ? 'mv' : 'tv'}${media.id}`}
+            arrow
+          >
             <IconButton size='large'>
               <InfoIcon />
             </IconButton>

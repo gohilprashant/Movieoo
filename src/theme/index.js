@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
   typography: {
-    fontFamily: ['Poppins', 'Roboto', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ['Nunito', 'Roboto', 'Arial', 'sans-serif'].join(','),
     subtitle3: {
       fontSize: 12,
     },

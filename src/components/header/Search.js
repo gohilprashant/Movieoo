@@ -57,7 +57,7 @@ const Search = () => {
     e.preventDefault();
     if (query) {
       navigate(`/search?${query}`);
-      // setQuery('');
+      setQuery('');
     }
   };
 
